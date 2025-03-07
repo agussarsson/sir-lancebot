@@ -29,8 +29,6 @@ Since testing wasn't supported or used in this project we chose to do testing wi
 | **writing code** | 4h | 3h | 8h | 3h |
 | **running code** | 1h | 1h | 1h | 2h |
 
-For setting up tools and libraries (step 4), enumerate all dependencies you took care of and where you spent your time, if that time exceeds 30 minutes.
-
 **Andre:** I had severe issues with setting up the environment so I could run the code. The documentation fails to warn about the issues that will arise from trying to set up a development environment on Windows. The start of the project for me was trying and failing to set up docker and poetry dependency manager. After some debugging I determined that the main issue was that Windows 10 Home edition does not have HyperV which is essential for WSL2 which docker runs on. The choice of using docker ultimately made it harder for development on Windows. However, fortunately, the code could be run without docker, but this also required setting up Poetry which took some time as well. 
 
 ## Overview of issue(s) and work done.
@@ -60,8 +58,6 @@ For setting up tools and libraries (step 4), enumerate all dependencies you took
 **Code changes:** Se appendix for git diff for issue 1
 
 ### Test results
-
-Overall results with link to a copy or excerpt of the logs (before/after refactoring).
 
 Since there were no tests in this project we implemented tests both for the original function and for the updated function.
 
@@ -125,7 +121,7 @@ The function had no tests from the start. We have created tests for before + aft
 
 This is the structure changes Yoda does to their speech, and the command should do the same:
 
-*<subject> <action>* to *<action> <subject>*
+`<subject> <action>` to `<action> <subject>`
 
 **Example:** 
 
@@ -137,7 +133,7 @@ Patience you must have my young Padawan.
 
 However, the issue does not describe the process well enough. Yoda speech is transforming
 
-*subject-verb-object* to  *object-subject-verb*    
+`subject-verb-object` to  `object-subject-verb`    
 
 So we interpret that the issue will be resolved if this functionality is implemented instead of what is described in the issue.
 
@@ -167,9 +163,9 @@ So we interpret that the issue will be resolved if this functionality is impleme
 
 9 Multiple sentences: The function should apply the yodaification on all sentences without mixing between them. 
 	
-Example: 	“I am driving a car. She is buying a boat.” should become
+Example: 	`“I am driving a car. She is buying a boat.”` should become
 			
-   “Driving a car, I am. Buying a boat, she is.
+   `“Driving a car, I am. Buying a boat, she is.`
 
 ### Project plan: 
 
