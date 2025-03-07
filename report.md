@@ -11,7 +11,7 @@ Setup:
 - Python 3.12 required.
 - install poetry (and add to path variable)
 
-The run this in terminal in the repository root directory:
+Then run this in terminal in the repository root directory:
 
 ```poetry install```
 
