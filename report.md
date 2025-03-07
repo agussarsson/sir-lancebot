@@ -197,17 +197,15 @@ Example: 	“I am driving a car. She is buying a boat.” should become
 [Yodaify](//www.plantuml.com/plantuml/png/lLPDZzis4BthLqotbpHGt0-WXmeja0-anHwI7ZQNmd07N79aiwP8XQJYDTh-zr8YxSogjUfS0XzCldapZnmEENeUel1nw4prHTnHHz0ReMqLNG_HmRsBqNMWj2SPjRDLs6lR2oywCDfIFFR9mPdZEAagQKG8O9sYRq04k4dUAtg8OTKETdLqIkZskFej_z_0dnK0O84na8ra9Jq9PDeQJjC6GlHVDJ1o2xKmP7neGBgk4rQ5rIjdOvAguMaDus3oWx_WhRCqkl_D5lVTj3YbWtHUZGjSdSD8jqsXjcLnnhdzq6Vnj6coCOz5tsDnoG1vxppkqjoGpr2NIDfkysJhtT0Z3u6Of9052fX9MDoT6WnTv6Ano9qsAaNDKzaf537wKAQ3dmlE0ppsPnBegGqdpvAgnqjujETJlF5eIcJN7_Feu9CVbKmDlHAH54iBNvwY8Btknqf3v0OhEaAyYZe5vGuSl-mMACPqNW5n8LyBHv4jHeT8blmCrc7Xg1TAuPFpZsZfWFX4cf2kWl3RqC0BUqpZf_l3ULhkqvRYETnqgHZEfRZj_I2CRZMfASFSmZAx1DSSuRVx8Cn-9iaCbzR3yFaMpcV13JXQt0VoNYj55ZkAEwTollAuWPy7AzyL_Yb8PenxpY_BJ_3czkxkzkqlXRSJinFXeid8Dt2PE9MG4sgE3NQEthk8SaToZyvAuazYUGdNBrryjvcpbubPx2gYJf0NKq_W3XnluFJ4tdu4rw-C9flYrF0rr-IPkQXTmsHluFM3fAc0M8X_9VZA5Ps3yX9RlUZxLtdyUhGodNjgdIVKzeFRqpNv56tIkfAVQ7-GZ8MMZgs1P7uf0jLGgfQQX3jJmtRGHZNmwvG8OTPtrXrQ8_QqARRGm1sz7yXAOiQJ4bqIoiweLM31RyTytHjQQnitctb7_VP_E-eRYY9rrQMNTU7zv4VpkHj3SGljuRzmCKI7nabX24Fql8DmMag95-4pTPnFQ068skg8MEfWcJv__KU9N0bL_kQ3tv-jl_p-X_5NJv-HcsTGlhYg_0S_VcGe4NQa4kL61sr355QIQszoGLNFoQgXC_y0)
 
 ### Further work:
-**For issue 2:** some tests are missing for the generic specifications. However, this should be handled by another test file because that functionality is implemented in another higher-level function.
+**For issue 2:** Some tests are missing for the generic specifications. However, this should be handled by another test file because that functionality is implemented in another higher-level function. 
 
-**For both issues:** Dependency managers would need to be updated to include the new testing environment. This is also however outside the scope of the issues and should be raised as a new issue with its own pull request. Furthermore, the documentation should be updated to show how to run tests and basic examples of test-structure should be included to help onboarding of people who want to add tests.
+**For both issues:** Dependency managers would need to be updated to include the new testing environment. This is also however outside the scope of the issues and should be raised as a new issue with its own pull request. Furthermore, the documentation should be updated to show how to run tests and basic examples of test-structure should be included to help onboarding of people who want to add tests. The additions should also be checked that they follow the guidelines of the main repository. 
 
 ## Overall experience
-
-What are your main take-aways from this project? What did you learn?
-
 It was clear that the main time sinks were onboarding and understanding the codebase. This time could be shortened down a lot by having a very clear tutorial for the onboarding part. Another issue was understanding how to incorporate new features into the system. Our main way of understanding the code was studying other peoples functions and mimicking their behavior. This could also be vastly improved by including template functions and graphical representations of how the code works together. 
 
-Another issue was group work, with these small tasks/issues it became hard to work concurrent on the same thing. The lesson here is that 
+Another issue was group work, with these small tasks/issues it became hard to work concurrent on the same thing. The lesson here is that tasks that are “atomic” should be done by a single developer, otherwise much time is spent in duplicate effort in understanding code/debugging and on coordinating.
+
 
 ## Self-assessment: Way of working
 
@@ -229,7 +227,7 @@ This being the last assignment of the course, we do not have much to take with u
 
 
 ## Issue 1 git diff
-
+```
 diff --git a/bot/exts/holidays/valentines/be_my_valentine.py b/bot/exts/holidays/valentines/be_my_valentine.py
 index 81679794..70b52ce0 100644
 --- a/bot/exts/holidays/valentines/be_my_valentine.py
@@ -340,5 +338,100 @@ index 81679794..70b52ce0 100644
  	@commands.cooldown(1, 1800, commands.BucketType.user)
  	@send_valentine.command(name="secret")
 (END)
+```
+## Issue 2 git diff
+```
++ import re
++ from discord.ext import commands
++ from discord import AllowedMentions
++
++ from bot.bot import Bot
++
++
++ class Yodaify(commands.Cog):
++ 	"""Cog for the yodaify command."""
++
++ 	def _yodaify_sentence(self, sentence: str) -> str:
++     	"""Convert a single sentence to Yoda speech pattern."""
++     	sentence = sentence.strip().rstrip('.')
++
++     	# Basic pattern matching for subject-verb-object
++     	# Looking for patterns like "I am driving a car" -> "Driving a car, I am"
++     	words = sentence.split()
++     	if len(words) < 3:
++         	return sentence + "."
++
++     	# Common subject-verb patterns to identify the split point
++     	subject_verb_patterns = [
++         	(r'^(i|you|he|she|it|we|they)\s+(am|are|is|was|were)\s+', 2),
++         	(r'^(i|you|he|she|it|we|they)\s+\w+\s+', 2),
++     	]
++
++     	for pattern, split_index in subject_verb_patterns:
++         	if re.match(pattern, sentence.lower()):
++             	subject = ' '.join(words[:split_index])
++             	predicate = ' '.join(words[split_index:])
++             	if predicate:
++                 	return f"{predicate.lower()}, {subject.lower()}."
++
++     	# If no pattern matches, return original with message
++     	return None
++
++ 	@commands.command(name="yoda")
++ 	async def yodaify(self, ctx: commands.Context, *, text: str | None) -> None:
++     	"""
++     	Convert the provided text into Yoda-like speech.
++
++     	The command transforms sentences from subject-verb-object format
++     	to object-subject-verb format, similar to how Yoda speaks.
++     	"""
++     	if not text:
++         	return  # Help message handled by Discord.py's help system
++
++     	# Split into sentences (considering multiple punctuation types)
++     	sentences = re.split(r'[.!?]+\s*', text.strip())
++     	sentences = [s for s in sentences if s]
++
++     	yoda_sentences = []
++     	any_converted = False
++
++     	for sentence in sentences:
++         	yoda_sentence = self._yodaify_sentence(sentence)
++         	if yoda_sentence is None:
++             	yoda_sentences.append(sentence + ".")
++         	else:
++             	any_converted = True
++             	yoda_sentences.append(yoda_sentence)
++
++     	if not any_converted:
++         	await ctx.send(
++             	f"Yodafication this doesn't need, {ctx.author.display_name}!\n>>> {text}",
++             	allowed_mentions=AllowedMentions.none()
++         	)
++         	return
++
++     	for i in range(len(yoda_sentences)):
++         	sentence = yoda_sentences[i]
++         	words = sentence.split()
++         	for j in range(len(words)):
++             	if words[j].lower() == "i":
++                 	words[j] = "I"
++         	sentence = ' '.join(words)
++         	sentence = sentence[0].upper() + sentence[1:]
++         	yoda_sentences[i] = sentence
++     	result = ' '.join(yoda_sentences)
++
++     	await ctx.send(
++         	f">>> {result}",
++         	allowed_mentions=AllowedMentions.none()
++     	)
++
++
++ async def setup(bot: Bot) -> None:
++ 	"""Loads the yodaify cog."""
++ 	await bot.add_cog(Yodaify())
+```
+
+
 
 
