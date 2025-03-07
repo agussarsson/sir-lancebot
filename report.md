@@ -7,8 +7,25 @@
 A Discord bot built by the Python Discord community.
 
 ## How to run tests
+Setup:
+- Python 3.12 required.
+- install poetry (and add to path variable)
 
-(dependencies might need to be installed depending on machine running them) 
+The run this in terminal in the repository root directory:
+
+```poetry install```
+
+```poetry add --dev pytest-asyncio```
+
+(If errors) To make sure poetry is using python 3.12 run
+
+```poetry env use python3.12``` 
+
+and run again
+
+```poetry install```
+
+(other dependencies might need to be installed depending on machine running them) 
 
 ### To test issue 1 be_my_valentine:
 
