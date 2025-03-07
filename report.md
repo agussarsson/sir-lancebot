@@ -8,7 +8,6 @@ A Discord bot built by the Python Discord community.
 
 ## Onboarding experience
 
-
 For this task we chose another project since we couldn't find an appropriate issue on the previous project. The available documentation to start working on sir-lancebot gave a variation of approaches, such as using Gitpod, Docker, Poetry or installing dependencies yourself. Three people in the group used docker and one used Poetry to run the server. For testing, we all used Poetry. 
 
 We felt that the documentation for the use of docker was a bit insufficient for people that haven't used docker before. For example, it doesn't mention that if you are a Windows user using WSL and Ubuntu, there are some required changes to the docker desktop settings page which are not presented in their documentation. In André’s case, Docker was unable to run at all because of the version of Windows 10 he was using. This took quite a lot of onboarding time and as with many development projects it would have been easier to develop on Linux. This shows how it is even more important for repositories labeled as “easy-to-contribute” to have an easy and quick onboarding process because the presentation of a straight forward setup in the onboarding documentation clashes with the experience for some users. 
@@ -19,9 +18,20 @@ Since testing wasn't supported or used in this project we chose to do testing wi
 
 ## Effort spent
 
+| Task | William | Marcus | Arvid | Andre |
+| --- | --- | --- | --- | --- |
+| **plenary discussions/meetings** | 8h | 8h | 8h | 8h |
+| **discussions within parts of the group** | 1h | 2h | 0h | 1h |
+| **reading documentation** | 2h | 2h | 1.5h | 1h |
+| **configuration and setup** | 0.5h | 0.5h | 2.5h | 4h |
+| **analyzing code/output** | 3h | 1.5h | 2h | 2h |
+| **writing documentation/ report** | 2h | 3h | 1h | 2h |
+| **writing code** | 4h | 3h | 8h | 3h |
+| **running code** | 1h | 1h | 1h | 2h |
+
 For setting up tools and libraries (step 4), enumerate all dependencies you took care of and where you spent your time, if that time exceeds 30 minutes.
 
-Andre: I had severe issues with setting up the environment so I could run the code. The documentation fails to warn about the issues that will arise from trying to set up a development environment on Windows. The start of the project for me was trying and failing to set up docker and poetry dependency manager. After some debugging I determined that the main issue was that Windows 10 Home edition does not have HyperV which is essential for WSL2 which docker runs on. The choice of using docker ultimately made it harder for development on Windows. However, fortunately, the code could be run without docker, but this also required setting up Poetry which took some time as well. 
+**Andre:** I had severe issues with setting up the environment so I could run the code. The documentation fails to warn about the issues that will arise from trying to set up a development environment on Windows. The start of the project for me was trying and failing to set up docker and poetry dependency manager. After some debugging I determined that the main issue was that Windows 10 Home edition does not have HyperV which is essential for WSL2 which docker runs on. The choice of using docker ultimately made it harder for development on Windows. However, fortunately, the code could be run without docker, but this also required setting up Poetry which took some time as well. 
 
 ## Overview of issue(s) and work done.
 
@@ -63,17 +73,17 @@ link: https://github.com/agussarsson/sir-lancebot/blob/main/bemyvalentine_covera
 
 Coverage for function: 100 %
 
-link:https://github.com/agussarsson/sir-lancebot/blob/main/bemyvalentine_coverage_original_function.pdf 
+link: https://github.com/agussarsson/sir-lancebot/blob/main/bemyvalentine_coverage_original_function.pdf 
 
 **After:**
 
 Coverage for whole file: 67 %
 
-link:https://github.com/agussarsson/sir-lancebot/blob/main/bemyvalentine_coverage_new_file.pdf 
+link: https://github.com/agussarsson/sir-lancebot/blob/main/bemyvalentine_coverage_new_file.pdf 
 
 Coverage for function: 100 %
 
-link:https://github.com/agussarsson/sir-lancebot/blob/main/bemyvalentine_coverage_new_function.pdf 
+link: https://github.com/agussarsson/sir-lancebot/blob/main/bemyvalentine_coverage_new_function.pdf 
 
 UML 
 [BeMyValentine](https://www.plantuml.com/plantuml/umla/lLV1Sjis4BtpAr3ducOO9UbC3zKqCuazQSS7fmTxUj6e68XSKh10B0E0bZLj_xqB0g8WohITGoCT1Eo-tGKU5hlGH-k4SLsZikm7juO6MAk4r9d3bZbaAtGE6rPA0uMJg3ExaReLHZHCIGrkrm93uzQOPOKIrZAD9RnZmh8pCft1WxEpDIfPYfsTtGi5sf6PdQs0Dpi-26ONSBtxSpyxOtzdZFdOS-O71ximvrngwJW_jw2gFE0kqFqOj0f5oUyiwlD1S0yLMCSDAeWsXNkOimARHkZIpYvHErfgn5lGvM5fvrxKVvwmp5bdmSo99rkWAMVNqAp0vEnrVbWyzsJDcNM6_SE-e0RseV_f_SVGGgFUDTZPxnhr02xMK6mYHO-uY7X3Yy26GuDtylnOTg3DEpdnto8qZsjeRwsI3Sq6_Rz9IltKfzH-exJtsK16WJKHKiUaKOYRhWtUAK_9NsIsRNaq2G8m1WrVqrnv3hse8P3KTPZK1hkMfouuEQXvuiZo0EBH7CjEmIGseeXZgKho6gP5KtBXd8cfNNHc773iuDW-2S4DLCCDYLGTB-5eptj_dkxe6TjT66qDsK5agcjBuVQJViVfyagmXP6jBmx35dk55WqSIoQXWSPJWo2VDBFWA7TgUomz8NpwA7gDajQ11ZCII_l4KJ-N2j_2F-SQjbJC2cNfwWfJqnb-qZiQlzviXscyC3MumLrwaRmy3PNgldP2oKf2sJESQX9cdnBdgIGj15kXDe-6x1LJwqdauoqCPv4gkDTG3JT6bYLetW3rcpBm5SPpzbkdYzjzlOzE0iBlETI_3-pwwkRcwill4RSMenD9WtfbUhScWNqAKSiPopezbbAV2WMMeowE6b6ivmjgOhVBCVevO9_pBm5A4XdHj_4ZWqH-w2LN1-7YKacgIRVBdBrDOwRCJCREGw6TiyyF1VG9bBWu8VY5AngSfYas-zIsbs7ysMkJE2keq02z6kvn0o_XKrGKwuLuWjtHusZq6BaG5d8MivOIS8MeSbPtLBldx8-U2A4MDngtbH8RM4OTNVOR-De19KYYt4U2oK2zCPVUVd1-vVbQALWGdSlbkAE-VxQZNeCJiQi-LLadwkTqmVt_6qCqizNsCRde7DALBUZjmQakd7QG02DAZB3VgUDyGmiOlNwVWu-gFuK8cP25bphxwytYrS-_-6_Ul_oNRrXySMNXX_rwG9J2hg4ao9cqKjDV1yfJhCvYGcKVwUNi_qhy1m00)
@@ -209,41 +219,16 @@ This being the last assignment of the course, we do not have much to take with u
 
 ## Statement of contributions
 
-### William: Participated in planning the assignment. Implemented tests for the original code, which were then updated with new tests for our new feature. Also worked on the report. 
+**William:** Participated in planning the assignment. Implemented tests for the original code, which were then updated with new tests for our new feature. Also worked on the report. 
 
-### André: Participated in planning the assignment. Formulaized requirements for issue 1 and 2. Implemented tests for issue 2. Created UML diagrams.
+**André:** Participated in planning the assignment. Formulaized requirements for issue 1 and 2. Implemented tests for issue 2. Created UML diagrams.
 
-### Arvid: Participated in planning the assignment. Set up discord server & bot, wrote code for issue 1. Worked on the report.
+**Arvid:** Participated in planning the assignment. Set up discord server & bot, wrote code for issue 1. Worked on the report.
 
-### Marcus: Participated in planning the assignment. Helped formalize the requirements for issue 2. Wrote the implementation for issue 2. Wrote on the report.
-
-
+**Marcus:** Participated in planning the assignment. Helped formalize the requirements for issue 2. Wrote the implementation for issue 2. Wrote on the report.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Issue 1 git diff
+## Issue 1 git diff
 
 diff --git a/bot/exts/holidays/valentines/be_my_valentine.py b/bot/exts/holidays/valentines/be_my_valentine.py
 index 81679794..70b52ce0 100644
