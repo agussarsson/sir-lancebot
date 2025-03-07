@@ -192,6 +192,15 @@ Example: 	`“I am driving a car. She is buying a boat.”` should become
 ### UML diagram
 [Yodaify](//www.plantuml.com/plantuml/png/lLPDZzis4BthLqotbpHGt0-WXmeja0-anHwI7ZQNmd07N79aiwP8XQJYDTh-zr8YxSogjUfS0XzCldapZnmEENeUel1nw4prHTnHHz0ReMqLNG_HmRsBqNMWj2SPjRDLs6lR2oywCDfIFFR9mPdZEAagQKG8O9sYRq04k4dUAtg8OTKETdLqIkZskFej_z_0dnK0O84na8ra9Jq9PDeQJjC6GlHVDJ1o2xKmP7neGBgk4rQ5rIjdOvAguMaDus3oWx_WhRCqkl_D5lVTj3YbWtHUZGjSdSD8jqsXjcLnnhdzq6Vnj6coCOz5tsDnoG1vxppkqjoGpr2NIDfkysJhtT0Z3u6Of9052fX9MDoT6WnTv6Ano9qsAaNDKzaf537wKAQ3dmlE0ppsPnBegGqdpvAgnqjujETJlF5eIcJN7_Feu9CVbKmDlHAH54iBNvwY8Btknqf3v0OhEaAyYZe5vGuSl-mMACPqNW5n8LyBHv4jHeT8blmCrc7Xg1TAuPFpZsZfWFX4cf2kWl3RqC0BUqpZf_l3ULhkqvRYETnqgHZEfRZj_I2CRZMfASFSmZAx1DSSuRVx8Cn-9iaCbzR3yFaMpcV13JXQt0VoNYj55ZkAEwTollAuWPy7AzyL_Yb8PenxpY_BJ_3czkxkzkqlXRSJinFXeid8Dt2PE9MG4sgE3NQEthk8SaToZyvAuazYUGdNBrryjvcpbubPx2gYJf0NKq_W3XnluFJ4tdu4rw-C9flYrF0rr-IPkQXTmsHluFM3fAc0M8X_9VZA5Ps3yX9RlUZxLtdyUhGodNjgdIVKzeFRqpNv56tIkfAVQ7-GZ8MMZgs1P7uf0jLGgfQQX3jJmtRGHZNmwvG8OTPtrXrQ8_QqARRGm1sz7yXAOiQJ4bqIoiweLM31RyTytHjQQnitctb7_VP_E-eRYY9rrQMNTU7zv4VpkHj3SGljuRzmCKI7nabX24Fql8DmMag95-4pTPnFQ068skg8MEfWcJv__KU9N0bL_kQ3tv-jl_p-X_5NJv-HcsTGlhYg_0S_VcGe4NQa4kL61sr355QIQszoGLNFoQgXC_y0)
 
+### Test case coverage
+
+Coverage for whole file: 94 %
+
+link: https://github.com/agussarsson/sir-lancebot/blob/main/yoda_coverage_file.pdf
+
+Coverage for function: 96 %
+link: https://github.com/agussarsson/sir-lancebot/blob/main/yoda_coverage_function.pdf
+
 ### Further work:
 **For issue 2:** Some tests are missing for the generic specifications. However, this should be handled by another test file because that functionality is implemented in another higher-level function. 
 
