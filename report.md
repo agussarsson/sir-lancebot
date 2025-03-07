@@ -6,6 +6,29 @@
 
 A Discord bot built by the Python Discord community.
 
+## How to run tests
+
+(dependencies might need to be installed depending on machine running them) 
+
+### To test issue 1 be_my_valentine:
+
+Be in the branch `bemyvalentine-patch`
+
+Run this in terminal in the repository root directory:
+```
+poetry run pytest
+```
+
+### To test issue 2 yodaify:
+
+Be in the branch `yodaify-with-tests`
+
+Run this in terminal in the repository root directory:
+```
+poetry run pytest
+```
+
+
 ## Onboarding experience
 
 For this task we chose another project since we couldn't find an appropriate issue on the previous project. The available documentation to start working on sir-lancebot gave a variation of approaches, such as using Gitpod, Docker, Poetry or installing dependencies yourself. Three people in the group used docker and one used Poetry to run the server. For testing, we all used Poetry. 
